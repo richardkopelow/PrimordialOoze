@@ -62,5 +62,6 @@ public class Simulation : MonoBehaviour
         }
         StartCoroutine(SimTick());
         Debug.Log("NextGen");
+        simCount++;
     }
 }
