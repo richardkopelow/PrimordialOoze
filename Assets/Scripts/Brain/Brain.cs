@@ -11,6 +11,10 @@ public class Brain
 
     public Brain(Genome genome, List<Neuron> inputs, List<Neuron> outputs)
     {
+        if (genome.MaxNeurons<inputs.Count+outputs.Count)
+        {
+            genome.MaxNeurons = inputs.Count + outputs.Count;
+        }
         this.genome = genome;
         links = new List<Link>();
         neurons = new Neuron[genome.MaxNeurons];

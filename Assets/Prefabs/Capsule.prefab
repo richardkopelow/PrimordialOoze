@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: 0, y: 0, z: 1}
-  Distance: 5
+  Distance: 20
 --- !u!114 &114191547441548214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: 1, y: 0, z: 0}
-  Distance: 5
+  Distance: 20
 --- !u!114 &114643810993047162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: -1, y: 0, z: 0}
-  Distance: 5
+  Distance: 20
 --- !u!114 &114664302806651674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -156,7 +156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 025cc9b91aee4a34c830ff2812f5e183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0.5
+  Speed: 1
+  v: {x: 0, y: 0, z: 0}
 --- !u!114 &114794131537029412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -198,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: 0, y: 0, z: -1}
-  Distance: 5
+  Distance: 20
 --- !u!136 &136642808801203324
 CapsuleCollider:
   m_ObjectHideFlags: 1

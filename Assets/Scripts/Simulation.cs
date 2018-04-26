@@ -15,7 +15,8 @@ public class Simulation : MonoBehaviour
 
     private void Start()
     {
-        fittestGenomes = new Genome[10];
+        Time.timeScale = 10;
+        fittestGenomes = new Genome[30];
         for (int i = 0; i < fittestGenomes.Length; i++)
         {
             fittestGenomes[i] = new Genome();
@@ -30,7 +31,7 @@ public class Simulation : MonoBehaviour
         creatures = new List<Transform>();
         foreach (Genome genome in fittestGenomes)
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 3; i++)
             {
                 Transform b = Instantiate<Transform>(Body);
                 creatures.Add(b);
@@ -38,6 +39,7 @@ public class Simulation : MonoBehaviour
                 g.Mutate();
                 b.GetComponent<Body>().Genome = g;
             }
+            //Clone winner
             {
                 Transform b = Instantiate<Transform>(Body);
                 creatures.Add(b);
@@ -45,7 +47,8 @@ public class Simulation : MonoBehaviour
                 b.GetComponent<Body>().Genome = g;
             }
         }
-        for (int i = 0; i < 10; i++)
+        //generate randos
+        for (int i = 0; i < 3; i++)
         {
             Transform b = Instantiate<Transform>(Body);
             creatures.Add(b);
@@ -55,7 +58,7 @@ public class Simulation : MonoBehaviour
         }
         yield return new WaitForSeconds(20 + simCount);
 
-        fittestGenomes = creatures.OrderBy(t => t.position.x).Take(5).Select(t => t.GetComponent<Body>().Genome).ToArray();
+        fittestGenomes = creatures.OrderBy(t => t.position.x).Take(30).Select(t => t.GetComponent<Body>().Genome).ToArray();
         foreach (Transform cr in creatures)
         {
             Destroy(cr.gameObject);

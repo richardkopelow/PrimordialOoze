@@ -10,6 +10,9 @@ public class Mover : BodyPart
     private Neuron up;
     private Neuron right;
 
+    [SerializeField]
+    private Vector3 v;
+
     protected override void Awake()
     {
         base.Awake();
@@ -27,7 +30,7 @@ public class Mover : BodyPart
 
     void FixedUpdate()
     {
-        Vector3 v = new Vector3((float)right.Value, 0, (float)up.Value);
+        v = new Vector3((float)right.Value, 0, (float)up.Value);
         if (v.magnitude>1)
         {
             v.Normalize();
